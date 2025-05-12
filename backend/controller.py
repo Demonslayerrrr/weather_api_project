@@ -12,5 +12,7 @@ class WeatherController:
                           values = Values(**values_v))
             self.repository.add(model)
 
+    def get_data(self, time)-> Model:
+        return self.repository.get(time)
 
 

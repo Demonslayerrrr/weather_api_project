@@ -22,3 +22,11 @@ def post_function(lat,long,url, backedend_url):
 
     post(f"{backedend_url}/create_data",json=data)
      
+def get_function(time, backend_url):
+    if time is None:
+        return None
+    response = get(f"{backend_url}/get_data/{time}")
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return None
